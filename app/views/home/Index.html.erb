@@ -1,0 +1,19 @@
+<h1>This week's comics</h1>
+<%= debug @publishers.request.last_uri.to_s %>
+<%= debug @publishers.parsed_response["response"]["results"]["publisher"][7] %>
+<ul class="media-list">
+<% for @publisher in @publishers.parsed_response["response"]["results"]["publisher"] %>
+  <% if @publisher["image"] %>
+    <li class="media">
+      <div class="media-left">
+        <object data="<%= @publisher["image"]["icon_url"] %>" type="image/png">
+        <img src="http://static7.comicvine.com/uploads/square_avatar/0/1/1-male-good-large.jpg" />
+        </object>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @publisher["name"] %></h4>
+      </div>
+    </li>
+  <% end %>
+<% end %>
+</ul>
