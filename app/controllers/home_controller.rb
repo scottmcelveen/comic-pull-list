@@ -1,7 +1,8 @@
 require 'Publishers'
 
 class HomeController < ApplicationController
-    def index
-        @publishers = Publishers.get params["publisher_sort"], params["publisher_offset"]
-    end
+  handles_sortable_columns
+  def index
+    @publishers = Publishers.get params["sort"], params["page"]
+  end
 end
