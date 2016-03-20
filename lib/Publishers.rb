@@ -3,7 +3,7 @@ require 'ComicVineBase'
 class Publishers < ComicVineBase
   def self.get sort, page
     page ||= 1
-    sort ||= "name"
+    sort ||= :name
     limit = 10
     offset = (page.to_i - 1) * limit
     
