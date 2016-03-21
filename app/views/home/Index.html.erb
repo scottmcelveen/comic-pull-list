@@ -18,7 +18,7 @@
             <% end %>
             </td>
             <td>
-                <%= @publisher["name"] %>
+                <%= link_to @publisher["name"], :controller => "volumes", :action => "index", :id => @publisher["id"] %>
             </td>
         </tr>
     </tbody>

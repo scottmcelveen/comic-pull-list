@@ -38,6 +38,7 @@ gem 'httparty', '~> 0.13.0'
 
 gem 'will_paginate', '~> 3.0.5'
 gem "handles_sortable_columns"
+gem "rake", '10.4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

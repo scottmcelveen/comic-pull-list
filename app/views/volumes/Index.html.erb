@@ -1,0 +1,17 @@
+<h1>Choose the volume to browse issues</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th><%= sortable_column "Volume name", :column => :name, :direction => :desc %></th>
+        </tr>
+    </thead>
+    <tbody>
+<% for @volume in @volumes %>
+        <tr>
+            <td>
+                <%= @volume["name"] %>
+            </td>
+        </tr>
+    </tbody>
+<% end %>
+</table>
