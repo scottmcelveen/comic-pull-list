@@ -8,6 +8,12 @@ class VolumesController < ApplicationController
   end
   
   def index
-    @volumes = Volumes.get params[:id]
+    if session["volumes"]
+      @volumes = session["volumes"]
+    else
+      @volumes = Volumes.get params[:id]
+      session["volumes"] = @volumes.sort_by! { |v| v["name"] }
+    end
+    if (params[:sort] && params[:sort].starts_with?("-")) then @volumes.reverse! end
   end
 end
