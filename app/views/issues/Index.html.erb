@@ -1,0 +1,32 @@
+<h1>Choose the issue to browse the volume</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Logo</th>
+            <th>Issue number</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+<% for @issue in @issues %>
+        <tr>
+            <td>
+            <% if @issue["image"] %>
+                <object data="<%= @issue["image"]["tiny_url"] %>" type="image/png">
+                    <img src="http://static7.comicvine.com/uploads/square_mini/0/1/1-male-good-large.jpg" />
+                </object>
+            <% end %>
+            </td>
+            <td>
+                <%= @issue["issue_number"] %>
+            </td>
+            <td>
+                <%= @issue["volume"]["name"] %>
+            </td>
+        </tr>
+    </tbody>
+<% end %>
+</table>
+
+<%= will_paginate @publishers %>
